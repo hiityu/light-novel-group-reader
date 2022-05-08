@@ -2,6 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+const novelscrapper = require('./novelscrapper');
+(async () => {
+    await novelscrapper.initalize('master-of-martial-arts-has-an-advanced-optical-brain/');
+
+    let results = await novelscrapper.getResults(5);
+})();
 
 const Home: NextPage = () => {
   return (
